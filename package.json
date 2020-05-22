@@ -1,0 +1,28 @@
+{
+	"name": "emph",
+	"version": "0.0.1",
+	"description": "a collection of utilities I like :)",
+	"license": "MIT",
+	"author": {
+		"name": "frankie",
+		"url": "https://frankie.tech"
+	},
+	"source": "src/emph.js",
+	"main": "dist/emph.js",
+	"unpkg": "dist/emph.umd.js",
+	"scripts": {
+		"build": "rm -rf dist && microbundle -f modern,umd",
+		"start": "rm -rf dist && microbundle watch --compress=false -f modern,umd"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/frankie-tech/emph"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"> 0.25%"
+	],
+	"devDependencies": {
+		"microbundle": "^0.12.0"
+	}
+}
