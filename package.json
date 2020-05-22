@@ -11,8 +11,8 @@
 	"main": "dist/emph.js",
 	"unpkg": "dist/emph.umd.js",
 	"scripts": {
-		"build": "rm -rf dist && microbundle -f modern,umd",
-		"start": "rm -rf dist && microbundle watch --compress=false -f modern,umd"
+		"build": "rm -rf dist && microbundle -f modern,umd --no-sourcemap",
+		"start": "rm -rf dist && microbundle watch --compress=false -f modern,umd --no-sourcemap"
 	},
 	"repository": {
 		"type": "git",
