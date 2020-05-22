@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * @param {string} eventName - either custom | standard event name
  * @param {object} detail - event detail value with custom values
