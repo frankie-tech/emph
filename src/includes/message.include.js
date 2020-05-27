@@ -4,16 +4,16 @@ import empty from './empty.include';
  * @param {string} eventName - either custom | standard event name
  * @param {object} detail - event detail value with custom values
  */
-function dispatch(eventName, detail) {
+const dispatch = function (eventName, detail) {
 	var event = empty(detail)
 		? new Event(eventName)
 		: new CustomEvent(eventName, { bubbles: true, detail });
 	window.dispatchEvent(event);
-}
+};
 /**
  * @param {string} message - success message
  */
-function success(message) {
+const success = function (message) {
 	var styles = `
         display: inline-block;
         color: rgba(132, 203, 77);
@@ -25,19 +25,19 @@ function success(message) {
         font-size: 18px;
     `;
 	console.log('%cSuccess::' + message, styles);
-}
+};
 /**
  * @param {string} warning - warning message
  */
-function warn(warning) {
+const warn = function (warning) {
 	console.warn('❗️Warning::' + warning);
-}
+};
 /**
  * @param {string} errorName - custom error name / message
  * @throws {Error}
  */
-function err(errorName) {
+const err = function (errorName) {
 	throw new Error('🚨Error::' + errorName);
-}
+};
 
 export { dispatch, success, warn, err };
