@@ -1,10 +1,11 @@
+import empty from './empty.include';
 // @ts-check
 /**
  * @param {string} eventName - either custom | standard event name
  * @param {object} detail - event detail value with custom values
  */
 function dispatch(eventName, detail) {
-	var event = this.empty(detail)
+	var event = empty(detail)
 		? new Event('_' + eventName)
 		: new CustomEvent('_' + eventName, { bubbles: true, detail });
 	window.dispatchEvent(event);
