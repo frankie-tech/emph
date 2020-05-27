@@ -3,8 +3,8 @@
 import ready from './includes/ready.include';
 import type from './includes/type.include';
 import listen from './includes/listen.include';
-// import Settings from './includes/settings.include';
 import urlParse from './includes/urlParse.include';
+import matchMediaWrapper from './includes/matchMediaWrapper.include';
 import empty from './includes/empty.include';
 
 import {
@@ -52,6 +52,10 @@ const _ = (() => {
 	Emph.urlParse = Emph.int.urlParse = (str) => urlParse(str);
 
 	// imported functions
+	/**
+	 * @param {object} queries - see './includes/matchMediaWrapper.include.js' for an example mediaquery settings object
+	 */
+	Emph.media = (queries) => matchMediaWrapper(queries);
 	/**
 	 * @param {EventTarget} eventTarget
 	 * @param {string} eventName
