@@ -1,6 +1,3 @@
-import type from './type.include';
-import { err } from './message.include';
-
 const Settings = (function () {
 	/**
 	 *
@@ -28,16 +25,13 @@ const Settings = (function () {
 					if (key.indexOf('_') === 0) {
 						return self.store.set(key, value);
 					}
-					console.log(key);
 					obj[key] = value;
 					return true;
 				},
 				deleteProperty: function (obj, key) {
 					// looks for a secret key just in case;
-					if (key.indexOf('_') === 0) {
-						self.store.delete(key);
-						return true;
-					}
+					if (key.indexOf('_') === 0)
+						return self.store.has(key) ? self.store.delete(key) : false;
 					if (key in obj) {
 						delete obj[key];
 						return true;
