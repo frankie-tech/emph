@@ -4,7 +4,6 @@ import ready from './includes/ready.include';
 import type from './includes/type.include';
 import listen from './includes/listen.include';
 // import Settings from './includes/settings.include';
-import urlParse from './includes/urlParse.include';
 import empty from './includes/empty.include';
 
 import {
@@ -18,6 +17,7 @@ const _ = (() => {
 	function Emph() {}
 
 	Emph.int = Emph.prototype;
+
 	/*
 	Emph.int.settings = {
 		internal: {},
@@ -47,9 +47,9 @@ const _ = (() => {
 	Emph.cancelIdle = Emph.int.cancelIdle = (id) => cancelIdle(id);
 
 	/**
-	 * @param {string} str - pseudo polyfill for URLSearchParams
+	 * // @param {string} str - pseudo polyfill for URLSearchParams
 	 */
-	Emph.urlParse = Emph.int.urlParse = (str) => urlParse(str);
+	// Emph.urlParse = (str) => urlParse(str);
 
 	// imported functions
 	/**
