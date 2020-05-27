@@ -3,6 +3,7 @@
 import ready from './includes/ready.include';
 import type from './includes/type.include';
 import listen from './includes/listen.include';
+import { dispatch } from './includes/message.include';
 // import Settings from './includes/settings.include';
 import empty from './includes/empty.include';
 
@@ -50,7 +51,6 @@ const _ = (() => {
 	 * // @param {string} str - pseudo polyfill for URLSearchParams
 	 */
 	// Emph.urlParse = (str) => urlParse(str);
-
 	// imported functions
 	/**
 	 * @param {EventTarget} eventTarget
@@ -60,6 +60,12 @@ const _ = (() => {
 	 */
 	Emph.listen = (eventTarget, eventName, eventHandler, options) =>
 		listen(eventTarget, eventName, eventHandler, options);
+
+	/**
+	 * @param {string} eventName - either system or custom event name
+	 * @param {object} detail - detail object to assign to a custom event
+	 */
+	Emph.dispatch = (eventName, detail) => dispatch(eventName, detail);
 	/**
 	 * @param {EventListener} func - callback function for load event
 	 * @param {boolean} win - should the load event be assigned to window | document
