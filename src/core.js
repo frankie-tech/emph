@@ -56,7 +56,7 @@ const _ = (() => {
 	/**
 	 * // @param {string} str - pseudo polyfill for URLSearchParams
 	 */
-	Emph.urlParse = Emph.prototype.urlParse = (str) => urlParse(str);
+	// Emph.urlParse = Emph.prototype.urlParse = (str) => urlParse(str);
 
 	// imported functions
 	/**
