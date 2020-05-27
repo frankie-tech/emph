@@ -6,7 +6,7 @@ import type from './type.include';
 }
 */
 
-function getSettings(queries) {
+const getSettings = function (queries) {
 	const settingsObject = queries || {
 		XLDesktop: '(min-width: 1200px)',
 		Desktop: '(min-width: 992px)',
@@ -16,17 +16,21 @@ function getSettings(queries) {
 
 	const mediaQueries = makeMediaQueries(settingsObject);
 	return new Map(mediaQueries);
-}
+};
 
-function makeMediaQueries(object) {
+const makeMediaQueries = function (object) {
 	const entries = Object.entries(object);
 	for (let [key] in entries) {
 		entries[key][1] = window.matchMedia(entries[key][1]);
 	}
 	return entries;
-}
+};
 
-function assignMediaQueryEventListeners(mediaQuery, eventName, mapObject) {
+const assignMediaQueryEventListeners = function (
+	mediaQuery,
+	eventName,
+	mapObject
+) {
 	if (type(mediaQuery) !== 'mediaquerylist')
 		// prettier-ignore
 		return err('MatchMedia - MediaQueryList was not found in Breakpoints object');
@@ -41,7 +45,7 @@ function assignMediaQueryEventListeners(mediaQuery, eventName, mapObject) {
             ? dispatch(`Media::Match`, detail)
             : dispatch(`Media::MisMatch`, detail)
 	);
-}
+};
 
 export default function (queries) {
 	const breakpoints = getSettings(queries);

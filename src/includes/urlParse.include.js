@@ -5,7 +5,7 @@
  * Copyright (c) 2011 Addy Osmani
  * Dual MIT/BSD license
  */
-function urlParse(string) {
+export default function (string) {
 	var uri = {},
 		keys = [
 			'source',
@@ -41,5 +41,3 @@ function urlParse(string) {
 
 	return uri;
 }
-
-export default urlParse;
