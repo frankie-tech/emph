@@ -6,8 +6,8 @@ import empty from './empty.include';
  */
 function dispatch(eventName, detail) {
 	var event = empty(detail)
-		? new Event('_' + eventName)
-		: new CustomEvent('_' + eventName, { bubbles: true, detail });
+		? new Event(eventName)
+		: new CustomEvent(eventName, { bubbles: true, detail });
 	window.dispatchEvent(event);
 }
 /**
