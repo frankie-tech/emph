@@ -1,9 +1,3 @@
-declare global {
-    interface Window {
-        _: _;
-        emph: _;
-    }
-}
 import _ from './core';
-
+import type from './type';
 window.emph = window._ = _;
