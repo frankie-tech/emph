@@ -1,3 +1,3 @@
 import _ from './core';
-import type from './type';
+import './type';
 window.emph = window._ = _;
