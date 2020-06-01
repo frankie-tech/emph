@@ -25,44 +25,6 @@ const _ = (() => {
 
 	function Emph() { }
 
-	/*
-	Emph.prototype.settings = {
-		internal: {},
-	};
-	Emph.config = new Settings(Emph.int, 'internal');
-	*/
-
-	/**
-	 * @param {any} variable - anything to see if it is equal to empty
-	 */
-	// Emph.prototype.empty = (variable: any) => empty(variable);
-
-	/*
-	Emph.distinct = Emph.prototype.distinct = function () {
-		let list = Array.from(arguments);
-		return Array.from(new Set(list));
-	};
-	*/
-
-	/**
-	 * @param {any} obj - checks the variable to see what the true type of it is
-	 */
-	// Emph.type = Emph.prototype.type = (obj: any) => type(obj);
-
-	/**
-	 * @param {Function} cb - requestIdleCallback callback function
-	 */
-	// Emph.requestIdle = Emph.prototype.requestIdle = (cb: Function) => requestIdle(cb);
-	/**
-	 * @param {number} id - the id of a requestIdleCallback function
-	 */
-	// Emph.cancelIdle = Emph.prototype.cancelIdle = (id: number) => cancelIdle(id);
-
-	/**
-	 * // @param {string} str - pseudo polyfill for URLSearchParams
-	 */
-	// Emph.urlParse = Emph.prototype.urlParse = (str) => urlParse(str);
-
 	// imported functions
 	/**
 	 * @param {EventTarget} eventTarget
