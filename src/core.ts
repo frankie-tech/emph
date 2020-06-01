@@ -8,11 +8,12 @@ import { dispatch } from './includes/message.include';
 // import Settings from './includes/settings.include';
 // import empty from './includes/empty.include';
 import Settings from './includes/settings.include';
+/*
 import {
 	requestIdle,
 	cancelIdle,
 } from './polyfills/requestIdleCallback.polyfill';
-
+*/
 const _ = (() => {
 	'use strict';
 
