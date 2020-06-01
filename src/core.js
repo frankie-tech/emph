@@ -20,7 +20,7 @@ const _ = (() => {
 		docs: 'https://github.com/frankie-tech/emph/README.md',
 	};
 
-	function Emph() {}
+	function Emph() { }
 
 	/*
 	Emph.prototype.settings = {
