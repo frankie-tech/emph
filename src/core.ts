@@ -8,6 +8,7 @@ import { dispatch } from './includes/message.include';
 // import Settings from './includes/settings.include';
 // import empty from './includes/empty.include';
 import Settings from './includes/settings.include';
+import EmphEvents from './includes/event.include';
 /*
 import {
 	requestIdle,
@@ -89,6 +90,8 @@ const _ = (() => {
 })();
 
 class EmphBase {
+	events = new EmphEvents();
+
 	constructor() { }
 	type(variable: any): string {
 		return Object.prototype.toString.call(variable).slice(8, -1).toLowerCase();
