@@ -7,7 +7,7 @@
 		"name": "frankie",
 		"url": "https://frankie.tech"
 	},
-	"source": "src/emph.js",
+	"source": "src/emph.ts",
 	"main": "dist/emph.js",
 	"unpkg": "dist/emph.umd.js",
 	"scripts": {
