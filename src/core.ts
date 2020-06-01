@@ -1,12 +1,12 @@
 'use strict';
 interface _ { };
-import type from './type';
+import './type';
 import ready from './includes/ready.include';
 // import type from './includes/type.include';
 import listen from './includes/listen.include';
 import { dispatch } from './includes/message.include';
 // import Settings from './includes/settings.include';
-import empty from './includes/empty.include';
+// import empty from './includes/empty.include';
 import Settings from './includes/settings.include';
 import {
 	requestIdle,
@@ -33,12 +33,14 @@ const _ = (() => {
 	/**
 	 * @param {any} variable - anything to see if it is equal to empty
 	 */
-	Emph.prototype.empty = (variable: any) => empty(variable);
+	// Emph.prototype.empty = (variable: any) => empty(variable);
 
+	/*
 	Emph.distinct = Emph.prototype.distinct = function () {
 		let list = Array.from(arguments);
 		return Array.from(new Set(list));
 	};
+	*/
 
 	/**
 	 * @param {any} obj - checks the variable to see what the true type of it is
@@ -48,11 +50,11 @@ const _ = (() => {
 	/**
 	 * @param {Function} cb - requestIdleCallback callback function
 	 */
-	Emph.requestIdle = Emph.prototype.requestIdle = (cb: Function) => requestIdle(cb);
+	// Emph.requestIdle = Emph.prototype.requestIdle = (cb: Function) => requestIdle(cb);
 	/**
 	 * @param {number} id - the id of a requestIdleCallback function
 	 */
-	Emph.cancelIdle = Emph.prototype.cancelIdle = (id: number) => cancelIdle(id);
+	// Emph.cancelIdle = Emph.prototype.cancelIdle = (id: number) => cancelIdle(id);
 
 	/**
 	 * // @param {string} str - pseudo polyfill for URLSearchParams
