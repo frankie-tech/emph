@@ -11,14 +11,19 @@ export default class EmphMessages {
 			padding-bottom: 10px;
 			padding-left: 15px;
 			font-size: 18px;
-		`;
+		`.trim();
 		this.successStyle = `color: rgba(132, 203, 77);background-color: #287c03;`
 		this.warningStyle = ``;
 		this.errorStyle = ``;
 	}
 
+	format(style: string): string {
+		return this.styles.replace(/[\r\s\n]+/gm, '').trim() + style;
+	}
+
 	success(message: string): void {
-		console.log('%cSuccess ' + message, this.successStyle);
+		const style = this.format(this.successStyle)
+		console.log('%cSuccess ' + message, style);
 	}
 
 	warn(warning: string): void {
