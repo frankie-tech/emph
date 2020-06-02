@@ -1,10 +1,10 @@
-import _ from './core';
+import Emph from './core';
 declare global {
     interface Window {
-        _: _;
-        emph: _;
-        requestIdleCallback: ((callback: ((deadline: requestIdleCallbackDeadline) => void), opts?: RequestIdleCallbackOptions, ) => RequestIdleCallbackHandle);
+        requestIdleCallback: ((callback: ((deadline: RequestIdleCallbackDeadline) => void), opts?: RequestIdleCallbackOptions, ) => RequestIdleCallbackHandle);
         cancelIdleCallback: ((handle: RequestIdleCallbackHandle) => void);
+        _: Emph;
+        emph: Emph;
     }
 }
 
@@ -13,7 +13,7 @@ type RequestIdleCallbackOptions = {
     timeout: number;
 };
 
-type requestIdleCallbackDeadline = {
+type RequestIdleCallbackDeadline = {
     readonly didTimeout: boolean;
     timeRemaining: (() => number);
 };
