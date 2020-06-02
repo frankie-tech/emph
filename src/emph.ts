@@ -1,3 +1,4 @@
-import _ from './core';
+import Emph from './core';
 import type from './type';
-window.emph = window._ = _;
+
+window.emph = window._ = new Emph();
