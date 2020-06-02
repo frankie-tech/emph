@@ -1,38 +1,7 @@
-'use strict';
-interface _ { };
 import type from './type.d';
-// import ready from './includes/ready.include';
-// import type from './includes/type.include';
-// import listen from './includes/listen.include';
-// import { dispatch } from './includes/message.include';
-// import Settings from './includes/settings.include';
-// import empty from './includes/empty.include';
-import Settings from './includes/settings.include';
 import EmphEvents from './includes/event.include';
 import EmphMessages from './includes/message.include';
-/*
-import {
-	requestIdle,
-	cancelIdle,
-} from './polyfills/requestIdleCallback.polyfill';
-*/
-/*
-const _ = (() => {
-	'use strict';
-
-
-	const env = {
-		src: 'https://github.com/frankie-tech/emph',
-		docs: 'https://github.com/frankie-tech/emph/README.md',
-	};
-
-	function Emph() { }
-
-	Emph.env = Settings(Emph, env);
-
-	return Emph;
-})();
-*/
+import EmphSettings from './includes/settings.include';
 
 class EmphBase {
 	events = new EmphEvents();
@@ -43,8 +12,8 @@ class EmphBase {
 		return Object.prototype.toString.call(variable).slice(8, -1).toLowerCase();
 	}
 
-	distinct() {
-		return Array.from(new Set(Array.from(arguments)));
+	distinct(list: Array<any>): Array<any> {
+		return Array.from(new Set(list));
 	}
 
 	// checks if the variable is equal to a false/empty value
@@ -56,6 +25,7 @@ class EmphBase {
 
 		return false;
 	}
+
 	requestIdle(cb: Function) {
 		'requestIdleCallback' in window
 			? window.requestIdleCallback(() => cb())
@@ -69,6 +39,7 @@ class EmphBase {
 				});
 			}, 1);
 	}
+
 	cancelIdle(id: number) {
 		'cancelIdleCallback' in window
 			? window.cancelIdleCallback(id)
@@ -79,9 +50,12 @@ class EmphBase {
 class Emph extends EmphBase {
 	constructor() {
 		super();
+
+		new EmphSettings(this, {
+			author: 'frankie',
+			version: '0.0.1',
+		});
 	}
-
-
 }
 
 // https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/immediate-object-initialization.html
