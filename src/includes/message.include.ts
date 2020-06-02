@@ -11,7 +11,7 @@ export default class EmphMessages {
 			padding-bottom: 10px;
 			padding-left: 15px;
 			font-size: 18px;
-		`.trim();
+		`;
 		this.successStyle = `color: rgba(132, 203, 77);background-color: #287c03;`
 		this.warningStyle = ``;
 		this.errorStyle = ``;
