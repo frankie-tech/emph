@@ -12,6 +12,7 @@ type RequestIdleCallbackHandle = any;
 type RequestIdleCallbackOptions = {
     timeout: number;
 };
+
 type requestIdleCallbackDeadline = {
     readonly didTimeout: boolean;
     timeRemaining: (() => number);
