@@ -1,18 +1,16 @@
-type EmphSettingKey = string | number;
-type EmphSettingValue = undefined | string | number | symbol;
-type EmphSettingTarget = {
-    [key in EmphSettingKey]: any;
-};
+import { Instance, Settings, SettingsBase } from '../type';
 
-export default class EmphSettings {
-    constructor(Instance: any, BaseObject = {}) {
-        let _store = Symbol();
-        let _settings = Symbol()
-        let self = this;
+export default class EmphSettings implements SettingsBase {
+    Instance: Instance;
+    _store: Settings.Store;
+    _settings: Settings.Target;
+    constructor(Instance: Instance, BaseObject = {}) {
+        const _store = Symbol();
+        const _settings = Symbol.for('settings');
         const _data = function (): ProxyHandler<object> {
             return {
-                get: function (target: EmphSettingTarget, key: EmphSettingKey): EmphSettingValue {
-                    // for now does not support nested objects/arrays
+                get: function (target: Settings.Store, key: Settings.Key): Settings.Value {
+                    //? for now does not support nested objects/arrays
                     // if (['object', 'array'].indexOf(type(obj[key])) > -1) {
                     // return new Proxy(obj[key], data(instance));
                     // }
@@ -20,7 +18,7 @@ export default class EmphSettings {
                     if (key.toString().indexOf('_') === 0) return undefined;
                     return target[key];
                 },
-                set: function (obj: EmphSettingTarget, key: EmphSettingKey, value: EmphSettingValue): boolean {
+                set: function (obj: Settings.Store, key: Settings.Key, value: Settings.Value): boolean {
                     if (obj[key] === value) return true;
                     if (key.toString().indexOf('_') === 0) {
 
@@ -33,13 +31,13 @@ export default class EmphSettings {
                     });
                     return true;
                 },
-                deleteProperty: function (obj: EmphSettingTarget, key: EmphSettingKey): boolean {
-                    // looks for a secret key just in case;
+                deleteProperty: function (obj: Settings.Store, key: Settings.Key): boolean {
+                    //? looks for a secret key just in case;
                     if (key.toString().indexOf('_') === 0) {
                         return Instance[_store].has(key.toString()) ? Instance[_store].delete(key.toString()) : false;
                     }
                     if (key in obj) {
-                        obj.deleteProperty(key);
+                        delete obj[key];
                         return true;
                     }
                     return false;
