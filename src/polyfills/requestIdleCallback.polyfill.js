@@ -1,4 +1,4 @@
-// @ts-check
+// ! safe to delete
 // https://github.com/pladaria/requestidlecallback-polyfill
 
 /**
@@ -6,15 +6,15 @@
  * @param {Function} cb - valid callback function to run inside of a setTimeout
  */
 const requestIdlePoly = function (cb) {
-	var start = Date.now();
-	return setTimeout(function () {
-		cb({
-			didTimeout: false,
-			timeRemaining: function () {
-				return Math.max(0, 50 - (Date.now() - start));
-			},
-		});
-	}, 1);
+    var start = Date.now();
+    return setTimeout(function () {
+        cb({
+            didTimeout: false,
+            timeRemaining: function () {
+                return Math.max(0, 50 - (Date.now() - start));
+            },
+        });
+    }, 1);
 };
 
 /**
@@ -22,7 +22,7 @@ const requestIdlePoly = function (cb) {
  * @param {number} id - a random number generated to cancel a setTimeout when it is no longer needed
  */
 const cancelIdlePoly = function (id) {
-	clearTimeout(id);
+    clearTimeout(id);
 };
 
 /**
@@ -30,11 +30,11 @@ const cancelIdlePoly = function (id) {
  * @param {Function} cb - valid requestIdleCallback & setTimeout callback function
  */
 const requestIdle = function (cb) {
-	'requestIdleCallback' in window
-		? // prettier-ignore
-		  // @ts-ignore
-		  requestIdleCallback(cb)
-		: requestIdlePoly(cb);
+    'requestIdleCallback' in window
+        ? // prettier-ignore
+        // @ts-ignore
+        requestIdleCallback(cb)
+        : requestIdlePoly(cb);
 };
 
 /**
@@ -42,7 +42,7 @@ const requestIdle = function (cb) {
  * @param {number } id - a random number generated to cancel a cancelIdleCallback || setTimeout when it is no longer needed
  */
 const cancelIdle = function (id) {
-	// @ts-ignore
-	'cancelIdleCallback' in window ? cancelIdleCallback(id) : cancelIdlePoly(id);
+    // @ts-ignore
+    'cancelIdleCallback' in window ? cancelIdleCallback(id) : cancelIdlePoly(id);
 };
 export { requestIdle, cancelIdle };
