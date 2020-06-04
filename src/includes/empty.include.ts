@@ -1,3 +1,4 @@
+//! safe to delete
 // checks if the variable is equal to a false/empty value
 export default function (variable: any): boolean {
     if ([undefined, null, false, 0, '', '0'].includes(variable)) return true;
