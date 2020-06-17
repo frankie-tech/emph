@@ -10,3 +10,5 @@ dist/
 ._*
 .Spotlight-V100
 .Trashes
+
+.rts2_cache_es
