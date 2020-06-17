@@ -1,7 +1,7 @@
 import Emph from './core';
 declare global {
     interface Window {
-        requestIdleCallback: ((callback: ((deadline: RequestIdleCallbackDeadline) => void), opts?: RequestIdleCallbackOptions, ) => RequestIdleCallbackHandle);
+        requestIdleCallback: ((callback: ((deadline: RequestIdleCallbackDeadline) => void), opts?: RequestIdleCallbackOptions,) => RequestIdleCallbackHandle);
         cancelIdleCallback: ((handle: RequestIdleCallbackHandle) => void);
         _: Emph;
         emph: Emph;
@@ -28,6 +28,8 @@ export interface Base {
     cancelIdle: (id: number) => void;
 }
 
+
+export type workerSource = string | Function | URL;
 
 export interface Instance {
     handlers: Event.Emitters;
