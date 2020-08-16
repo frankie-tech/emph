@@ -2,9 +2,9 @@
 import { Instance, Base, Event, Settings, workerSource } from './type.d';
 
 // Classes
-import EmphEvents from './includes/event.include';
-import EmphSettings from './includes/settings.include';
-class EmphBase implements Base {
+import RockbellEvents from './includes/event.include';
+import RockbellSettings from './includes/settings.include';
+class RockbellBase implements Base {
 	constructor() { }
 
 	type(variable: any): string {
@@ -64,17 +64,17 @@ class EmphBase implements Base {
 }
 
 
-export default class Emph extends EmphBase implements Instance {
+export default class Rockbell extends RockbellBase implements Instance {
 	workers: Worker[];
 	handlers: Event.Emitters;
 	_store: Settings.Store;
 	_settings: Settings.Target;
-	emitter: EmphEvents;
+	emitter: RockbellEvents;
 	constructor() {
 		super();
 		this.handlers = new Map();
-		this.emitter = new EmphEvents(this);
-		new EmphSettings(this, {
+		this.emitter = new RockbellEvents(this);
+		new RockbellSettings(this, {
 			author: 'frankie',
 			version: '0.0.1',
 			events: true,

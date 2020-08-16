@@ -1,3 +1,3 @@
-import Emph from './core';
+import Rockbell from './core';
 
-window.rockbell = window._ = new Emph();
+window.rockbell = window._ = new Rockbell();

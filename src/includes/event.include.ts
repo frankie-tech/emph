@@ -2,7 +2,7 @@ import { Instance } from '../type';
 import { Event } from '../type';
 
 
-export default class EmphEvents {
+export default class RockbellEvents {
 	handlers: Event.Emitters;
 	constructor(Instance: Instance) {
 		this.handlers = Instance.handlers || new Map();

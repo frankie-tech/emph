@@ -1,10 +1,10 @@
-import Emph from './core';
+import Rockbell from './core';
 declare global {
 	interface Window {
 		requestIdleCallback: ((callback: ((deadline: RequestIdleCallbackDeadline) => void), opts?: RequestIdleCallbackOptions,) => RequestIdleCallbackHandle);
 		cancelIdleCallback: ((handle: RequestIdleCallbackHandle) => void);
-		_: Emph;
-		rockbell: Emph;
+		_: Rockbell;
+		rockbell: Rockbell;
 	}
 }
 

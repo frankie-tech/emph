@@ -1,4 +1,4 @@
-### Emph
+### Rockbell
 
 Total size:
 | Type | UMD | Modern |
@@ -9,9 +9,9 @@ Total size:
 | Brotli | 719b | 705b |
 
 Collection of snippets that are useful in day to day development.
-Uses a design pattern similar to jQuery to get assign both to `Emph` and `_`.
+Uses a design pattern similar to jQuery to get assign both to `Rockbell` and `_`.
 
-Avoid using libraries that also use `_`, and there is not a 'noConflict' mode built into Emph, yet.
+Avoid using libraries that also use `_`, and there is not a 'noConflict' mode built into Rockbell, yet.
 
 #### MediaWrapper
 
