@@ -3,7 +3,6 @@ declare global {
 	interface Window {
 		requestIdleCallback: ((callback: ((deadline: RequestIdleCallbackDeadline) => void), opts?: RequestIdleCallbackOptions,) => RequestIdleCallbackHandle);
 		cancelIdleCallback: ((handle: RequestIdleCallbackHandle) => void);
-		_: Rockbell;
 		rockbell: Rockbell;
 	}
 }
