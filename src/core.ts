@@ -44,6 +44,7 @@ class EmphBase implements Base {
 			? window.cancelIdleCallback(id)
 			: clearTimeout(id);
 	}
+	// create workerr functions
 	tostring(func: Function): string {
 		return func.toString().match(/^function[^{]*{((.|\n)*)}$/)[1];
 	}
@@ -68,9 +69,11 @@ export default class Emph extends EmphBase implements Instance {
 	handlers: Event.Emitters;
 	_store: Settings.Store;
 	_settings: Settings.Target;
+	emitter: EmphEvents;
 	constructor() {
 		super();
-		new EmphEvents(this);
+		this.handlers = new Map();
+		this.emitter = new EmphEvents(this);
 		new EmphSettings(this, {
 			author: 'frankie',
 			version: '0.0.1',
@@ -82,8 +85,6 @@ export default class Emph extends EmphBase implements Instance {
 		const r = new Map();
 		return (i: any) => r.get(i) || r.set(i, n(i)).get(i);
 	}
-
-	// mc(n:Function,cache:)
 
 	prepareWorker(source: workerSource): string {
 		switch (this.type(source)) {
