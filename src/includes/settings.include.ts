@@ -1,6 +1,6 @@
-import { Instance, Settings, SettingsBase } from '../type';
+import { Instance, Settings } from '../type';
 
-export default class EmphSettings implements SettingsBase {
+export default class EmphSettings implements Settings.Interface {
 	Instance: Instance;
 	_store: Settings.Store;
 	_settings: Settings.Target;
