@@ -1,4 +1,4 @@
-### Rockbell, named for the best dang Automail Mechanic
+### Rockbell, named for the best dang Automail Mechanic in Amestris
 
 Total size:
 | Type | UMD | Modern |
