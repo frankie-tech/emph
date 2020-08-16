@@ -4,7 +4,7 @@ declare global {
 		requestIdleCallback: ((callback: ((deadline: RequestIdleCallbackDeadline) => void), opts?: RequestIdleCallbackOptions,) => RequestIdleCallbackHandle);
 		cancelIdleCallback: ((handle: RequestIdleCallbackHandle) => void);
 		_: Emph;
-		emph: Emph;
+		rockbell: Emph;
 	}
 }
 
@@ -39,8 +39,6 @@ export interface Instance {
 }
 
 /* Settings Types */
-
-
 export namespace Settings {
 	export type Key = string | number;
 	export type Value = undefined | string | number | symbol;
@@ -55,16 +53,6 @@ export namespace Settings {
 	}
 }
 
-
-/*
-export {
-    Settings,
-    settingKey,
-    settingValue,
-    settingTarget,
-    settingStore
-}
-*/
 /* Event Types */
 export namespace Event {
 	export type Type = string;
@@ -72,17 +60,3 @@ export namespace Event {
 	export type Handlers = Array<Handler>;
 	export type Emitters = Map<Type, Handlers>;
 }
-
-/*
-type eventType = string;
-type eventHandler = Function;
-type eventHandlers = Array<eventHandler>;
-type eventEmitters = Map<eventType, eventHandlers>;
-
-export {
-    eventType,
-    eventHandler,
-    eventHandlers,
-    eventEmitters,
-}
-*/

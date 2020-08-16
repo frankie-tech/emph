@@ -1,3 +1,3 @@
 import Emph from './core';
 
-window.emph = window._ = new Emph();
+window.rockbell = window._ = new Emph();

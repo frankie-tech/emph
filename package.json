@@ -1,5 +1,5 @@
 {
-	"name": "emph",
+	"name": "rockbell",
 	"version": "0.1.0",
 	"description": "Collection of snippets that are useful in day to day development.",
 	"license": "MIT",
@@ -7,9 +7,9 @@
 		"name": "frankie",
 		"url": "https://frankie.tech"
 	},
-	"source": "src/emph.ts",
-	"main": "dist/emph.js",
-	"unpkg": "dist/emph.umd.js",
+	"source": "src/rockbell.ts",
+	"main": "dist/rockbell.js",
+	"unpkg": "dist/rockbell.umd.js",
 	"scripts": {
 		"clean": "rm -rf dist",
 		"microbundle:build": "microbundle -f modern,umd --no-sourcemap --raw=true",
@@ -19,7 +19,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/frankie-tech/emph"
+		"url": "https://github.com/frankie-tech/rockbell"
 	},
 	"browserslist": [
 		"last 2 versions",
